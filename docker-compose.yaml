@@ -11,3 +11,10 @@ services:
             - POSTGRES_DB=mydatabase
             - POSTGRES_PASSWORD=12345
             - PGDATA=/var/lib/postgresql/data/pgdata
+    app:
+        container_name: backend
+        build:
+            context: ./backend/
+            dockerfile: Dockerfile
+        ports:
+            - "8080:8080"
